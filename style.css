@@ -1,15 +1,22 @@
-body {
+@font-face {
+    font-family: 'BananaSP'; /* Name you want to give to your font */
+    src: url("src/fonts/bananasp.ttf") format('truetype'); /* Path to your font file */
+  }
+  body {
     display: grid;
     place-items: center;
     height: 100vh;
-    background-color: black;
+    background-image: url("src/background2.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     margin: 0rem;
     overflow: hidden;
   }
  
  
   h1 {
-    font-family: "src/typo/GT Maru/GT-Maru-Black-Trial.otf";
+    font-family: 'BananaSP';
     font-size: clamp(1rem, 5vw, 5rem);
     color: white;
     padding: 0rem clamp(1rem, 2vw, 3rem);
@@ -18,7 +25,7 @@ body {
   }
 
   button {
-  background-color: #1899D6;
+  background-color: yellow;
   border: solid transparent;
   border-radius: 16px;
   border-width: 0 0 4px;
@@ -44,12 +51,12 @@ body {
   -webkit-user-select: none;
   vertical-align: middle;
   white-space: nowrap;
-  width: 100%;
+  width: 20%;
 }
 
 button:after {
   background-clip: padding-box;
-  background-color: #1CB0F6;
+  background-color: rgb(184, 13, 184);
   border: solid transparent;
   border-radius: 16px;
   border-width: 0 0 4px;
@@ -82,7 +89,7 @@ button:active {
 }
   
   #userText {
-    font-family: "src/typo/GT Maru/GT-Maru-Black-Trial.otf";
+    font-family: 'BananaSP';
     font-size: clamp(1rem, 5vw, 5rem);
     color: black;
     padding: 0rem clamp(1rem, 2vw, 3rem);

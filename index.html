@@ -7,16 +7,10 @@
 </head>
 
 <body>
-    <button onclick="openFullscreen();">fullscreen</button>
-    <style>
-        button {
-            padding: 15px 32px;
-        }
-    </style>
-
     <link rel="stylesheet" href="style.css" />
-
-    <video id="myvideo" src="src/TotallySpying_Intro.mp4" width="1220" height="600"></video>
+    <button onclick="nextPage();">Continuer</button>
+    <video autoplay loop id="myvideo" class="totallyVideo" src="src/TotallySpying_Intro.mp4" width="1220"
+        height="600"></video>
 
     <script>
         /* Get the element you want displayed in fullscreen mode (a video in this example): */
@@ -24,17 +18,12 @@
 
         /* When the openFullscreen() function is executed, open the video in fullscreen.
         Note that we must include prefixes for different browsers, as they don't support the requestFullscreen method yet */
-        function openFullscreen() {
-            if (elem.requestFullscreen) {
-                elem.requestFullscreen();
-            } else if (elem.webkitRequestFullscreen) { /* Safari */
-                elem.webkitRequestFullscreen();
-            } else if (elem.msRequestFullscreen) { /* IE11 */
-                elem.msRequestFullscreen();
-            }
+        function nextPage() {
+            window.location.href = "game.html";
         }
-    </script>
 
+
+    </script>
 </body>
 
 </html>

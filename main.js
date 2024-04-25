@@ -1,15 +1,3 @@
-/*function setupVideo() {
-  // get video
-  var video = document.getElementById("myVideo");
-  // Add a listener to this video, so that when the video ends, the video is "hidden".
-  video.addEventListener("ended", function () {
-    // hide video
-    video.style.display = "none";
-  });
-}*/
-
-const videoWrapper = document.querySelector(".wrapper");
-
 const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 let interval = null;
