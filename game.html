@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Totally Spying</title>
+</head>
+
+<body>
+    <h1>Welcome to the Totally Spies Game</h1>
+    <script src="main.js"></script>
+
+    <link rel="stylesheet" href="style.css" />
+    <input type="text" id="userText" placeholder>
+    <button onclick="myFunction()">Click Here</button>
+    <script>
+        function myFunction() {
+            var x = document.getElementById("userText").value;
+            console.log(x);
+            if (x === "totally spy") {
+                window.location.href = "end.html";
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,27 +1,68 @@
-// Get the video element
-const video = document.getElementById("myVideo");
+/*function setupVideo() {
+  // get video
+  var video = document.getElementById("myVideo");
+  // Add a listener to this video, so that when the video ends, the video is "hidden".
+  video.addEventListener("ended", function () {
+    // hide video
+    video.style.display = "none";
+  });
+}*/
 
-// Play the video
-video.play();
+const videoWrapper = document.querySelector(".wrapper");
 
-// Function to read a text file in real time
-function readTextFile() {
-  fetch("src/file.txt")
-    .then((response) => response.text())
-    .then((text) => {
-      // Process the text here
-      console.log(text);
-    })
-    .catch((error) => {
-      console.error("Error reading the text file:", error);
-    });
+const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-  if (text.includes("totally spying")) {
-    video.pause();
-  } else {
-    video.play();
-  }
-}
+let interval = null;
 
-// Call the readTextFile function to read the text file in real time
-readTextFile();
+setTimeout(() => {
+  let iteration = 0;
+  let interval;
+
+  clearInterval(interval);
+
+  interval = setInterval(() => {
+    const target = document.querySelector("h1");
+    target.innerText = target.innerText
+      .split("")
+      .map((letter, index) => {
+        if (index < iteration) {
+          return target.dataset.value[index];
+        }
+
+        return letters[Math.floor(Math.random() * 26)];
+      })
+      .join("");
+
+    if (iteration >= target.dataset.value.length) {
+      clearInterval(interval);
+    }
+
+    iteration += 1 / 3;
+  }, 30);
+}, 5000); // 5000 milliseconds = 5 seconds
+/*
+document.querySelector("h1").onmouseover = (event) => {
+  let iteration = 0;
+
+  clearInterval(interval);
+
+  interval = setInterval(() => {
+    event.target.innerText = event.target.innerText
+      .split("")
+      .map((letter, index) => {
+        if (index < iteration) {
+          return event.target.dataset.value[index];
+        }
+
+        return letters[Math.floor(Math.random() * 26)];
+      })
+      .join("");
+
+    if (iteration >= event.target.dataset.value.length) {
+      clearInterval(interval);
+    }
+
+    iteration += 1 / 3;
+  }, 30);
+};
+*/
