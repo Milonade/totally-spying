@@ -4,6 +4,9 @@
 <head>
     <meta charset="UTF-8" />
     <title>Totally Spying</title>
+    <audio autoplay>
+        <source src="src/HereWeGo.mp3" loop type="audio/mpeg">
+    </audio>
 </head>
 
 <body>
@@ -12,13 +15,15 @@
 
     <link rel="stylesheet" href="style.css" />
     <input type="text" id="userText" placeholder>
-    <button onclick="myFunction()">Click Here</button>
+    <button onclick="myFunction()">Valider</button>
     <script>
         function myFunction() {
             var x = document.getElementById("userText").value;
             console.log(x);
-            if (x === "totally spy") {
+            if (x === "COMPOUDRIER") {
                 window.location.href = "end.html";
+            } else {
+                alert("Try again");
             }
         }
     </script>
